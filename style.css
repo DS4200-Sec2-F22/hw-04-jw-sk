@@ -1,0 +1,31 @@
+body {
+    font-family: Arial;
+    font-size: 14px;
+}
+
+#frame {
+    width: 505px;
+    height: 505px;
+}
+
+button {
+    margin: 20px;
+    width: 200px;
+}
+
+.header{
+  text-align: center;
+}
+
+.flex-container {
+  
+  display: flex;
+  flex-direction: row;
+  
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+
+}
