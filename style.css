@@ -29,3 +29,15 @@ button {
   flex-direction: column;
 
 }
+
+.point {
+  fill: blueviolet;
+  stroke: green;
+  stroke-width: 0px;
+}
+
+.yes_border {
+  fill: blueviolet;
+  stroke: green;
+  stroke-width: 5px;
+}

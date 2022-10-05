@@ -1,17 +1,16 @@
 var counter = 4;
 
-document.getElementById("circle-1").addEventListener("click", function(){
-    showID("circle-1");});
+function hover_over(point_id) {
+    document.getElementById(point_id).style.fill= 'yellow';
+}
 
-document.getElementById("circle-2").addEventListener("click", function(){
-    showID("circle-2");});
+function hover_out(point_id) {
+    document.getElementById(point_id).style.fill= 'blueviolet';
+}
 
-document.getElementById("circle-3").addEventListener("click", function(){
-    showID("circle-3");});
-
-document.getElementById("circle-4").addEventListener("click", function(){
-    showID("circle-4");});
-
+function show(elem) {
+    elem.classList.toggle('yes_border');
+}
 
 
 function addPoint() {
@@ -21,14 +20,25 @@ var objX = document.getElementById("xSelect");
   var objY = document.getElementById("ySelect");
   var yChord = objY.options[objY.selectedIndex].text;
 
-  let svg = document.getElementById("frame")
+  let svg = document.getElementById('frame')
 
   counter = counter + 1;
-  var objID = "circle-" + counter
-  svg.insertAdjacentHTML("beforeend", "<circle id='" + objID + "' cx='" + (50*xChord) + "' cy='" + (500 - 50*yChord) + "' r='10'/>");
+  var objID = "(" + xChord + "," + yChord + ")"
+  svg.insertAdjacentHTML("beforeend", "<circle class= 'point'" + "' id='" + objID + "' cx='" + (50*xChord) + "' cy='" + (500 - 50*yChord) + "' r='10'/>");
 
   document.getElementById(objID).addEventListener("click", function(){
     showID(objID);});
+
+  document.getElementById(objID).addEventListener("click", function(){
+    show(this);});
+
+  document.getElementById(objID).addEventListener("mouseover", function(){
+    hover_over(objID);});
+
+  document.getElementById(objID).addEventListener("mouseout", function(){
+    hover_out(objID);});
+
+
 }
 
 function showID(myID) {
