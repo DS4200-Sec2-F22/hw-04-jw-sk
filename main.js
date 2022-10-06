@@ -1,4 +1,4 @@
-var counter = 4;
+let counter = 4;
 
 function hover_over(point_id) {
     document.getElementById(point_id).style.fill= 'yellow';
@@ -14,16 +14,16 @@ function show(elem) {
 
 
 function addPoint() {
-var objX = document.getElementById("xSelect");
-  var xChord = objX.options[objX.selectedIndex].text;
+let objX = document.getElementById("xSelect");
+  let xChord = objX.options[objX.selectedIndex].text;
 
-  var objY = document.getElementById("ySelect");
-  var yChord = objY.options[objY.selectedIndex].text;
+  let objY = document.getElementById("ySelect");
+  let yChord = objY.options[objY.selectedIndex].text;
 
   let svg = document.getElementById('frame')
 
   counter = counter + 1;
-  var objID = "(" + xChord + "," + yChord + ")"
+  let objID = "(" + xChord + "," + yChord + ")"
   svg.insertAdjacentHTML("beforeend", "<circle class= 'point'" + "' id='" + objID + "' cx='" + (50*xChord) + "' cy='" + (500 - 50*yChord) + "' r='10'/>");
 
   document.getElementById(objID).addEventListener("click", function(){
